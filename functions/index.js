@@ -46,7 +46,7 @@ exports.oauth_redirect = functions.https.onRequest(async (req, res) => {
     });
 });
 
-// GET /oauth_code payload: { secret: パスワード, session: セション }
+// POST /oauth_code payload: { secret: パスワード, session: セション }
 // response: { code: コード }
 exports.oauth_code = functions.https.onRequest(async (req, res) => {
     if (req.body.secret != secret) {
